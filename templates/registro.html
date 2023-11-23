@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/registro_style.css">
+    <script src="../scripts/registro.js"></script>
+    <title>Registro</title>
+</head>
+
+<body>
+    <section class="form-register">
+        <h4>Formulario Registro</h4>
+        <form id="Registro" method="post" action="../Backend/Registro.php">
+
+            <input class="controls" type="text" name="nombre" id="nombre" placeholder="Ingrese su Nombre">
+
+            <input class="controls" type="text" name="apellido" id="apellido" placeholder="Ingrese su Apellido">
+
+            <input class="controls" type="email" name="email" id="email" placeholder="Ingrese su Email">
+
+            <input class="controls" type="password" name="contrasena" id="contrasena"
+                placeholder="Ingrese una Contraseña">
+
+            <div id="Terminos">
+                <p>Estoy de acuerdo con los <a href="#">Terminos y Condiciones</a></p>
+            </div>
+
+            <input class="botons" id="subir" type="button" value="Registrar" onclick="validarFormulario()">
+        </form>
+
+        <a href="login.html">
+            <p>Ya tengo Cuenta</p>
+        </a>
+    </section>
+</body>
+
+</html>

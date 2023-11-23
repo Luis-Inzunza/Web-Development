@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../css/MenuLibros.css">
+    <script src="../scripts/MenuLibros.js"></script>
+    <title>Menu de Libros</title>
+</head>
+
+<body>
+
+    <header class="w3-container w3-light-blue">
+        <div class="w3-bar">
+            <h2 class="w3-bar-item">Libros de #p_Nombre de usuario</h2>
+            <a href="../Backend/logout.php" class="w3-bar-item w3-right" id="cerrar" onclick="cerrarSesion()">
+                <h2>Cerrar sesion</h2>
+            </a>
+        </div>
+
+    </header>
+
+    <div class="w3-container" id="Libreria">
+
+        <!-- Tarjeta x libro-->
+        <div class="w3-card w3-center w3-hover-shadow Libro" onclick="abrirModal()">
+            <img src="perro.png" alt="#p_Imagen de portada" class="w3-round">
+            <div class="w3-center">
+                <p>#p_Nombre del libro</p>
+            </div>
+        </div>
+        <!-- /tarjeta -->
+
+        <a href="crear-libro.html" class="w3-card w3-center w3-hover-shadow Libro crear">
+            <p> Crear Nuevo Libro</p>
+        </a>
+
+    </div>
+
+
+
+</body>
+
+</html>

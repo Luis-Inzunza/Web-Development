@@ -1,0 +1,53 @@
+/* Etiquetas */
+p {
+    font-size: 1em;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Clases y Ids  (con sus especificaciones)*/
+
+#cerrar {}
+
+#cerrar:hover {
+    color: rgb(215, 205, 20);
+}
+
+#Libreria {
+    padding-top: 5%;
+}
+
+.Libro img {
+    padding-top: 5%;
+    width: 100%;
+    max-width: 300px;
+}
+
+.crear {
+    border-style: dashed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nuevo-libro {
+    margin: 0%;
+    border-radius: 50%;
+    font-size: 200%;
+    padding: .5rem;
+}
+
+/* Clases de libreria w3 */
+
+.w3-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+}
+
+.w3-card {
+    width: 30%;
+    max-width: 300px;
+}

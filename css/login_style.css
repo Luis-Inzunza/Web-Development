@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica Neue, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: white;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+form {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    box-shadow: 7px 13px 37px #000;
+    border-radius: 15px;
+    background-color: rgb(232, 247, 249);
+}
+
+h2 {
+    text-align: center;
+    font-size: 200%;
+    text-transform: capitalize;
+    color: rgb(25, 43, 43);
+    margin-bottom: 10%;
+}
+
+label,
+p {
+    font-size: 100%;
+    color: rgb(25, 43, 43);
+
+}
+
+#Ingresar {
+    text-align: center;
+    color: white;
+    padding: 7% 5%;
+    border: 2px solid cornflowerblue;
+    border-radius: 25px;
+    margin-bottom: 25px;
+    background-color: rgb(255, 255, 255);
+    outline: none;
+    font-size: 17px;
+}
+
+p {
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+    color: rgb(25, 43, 43);
+}
+
+label span {
+    color: red;
+    opacity: 0;
+}
+
+
+input {
+    padding: 7% 5%;
+    border: 2px solid cornflowerblue;
+    border-radius: 25px;
+    margin-bottom: 25px;
+    background-color: rgb(255, 255, 255);
+    outline: none;
+    font-size: 17px;
+}
+
+
+#formularioLogin a {
+    color: rgb(25, 43, 43);
+    text-decoration: none;
+}
+
+#formularioLogin a:hover {
+    color: rgb(28, 31, 31);
+    text-decoration: underline;
+}
+
+
+#Ingresar {
+    background-color: cornflowerblue;
+    font-size: 15px;
+    color: whitesmoke;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#Ingresar:hover {
+    background-color: whitesmoke;
+    color: cornflowerblue;
+}
+
+
+@media(max-width:991px) {
+    body {
+        padding: 0 30px 30px 30px;
+        margin-top: 5%;
+    }
+
+    form {
+        width: 45%;
+    }
+}
