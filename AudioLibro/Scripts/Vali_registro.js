@@ -1,5 +1,8 @@
-console.log("conectado a registro.js");
+// Validacion para Registro //
 
+console.log("js conectado");
+
+//Validacion directa del formulario
 function validarFormulario() {
     var nombre = document.getElementById('nombre').value;
 
@@ -17,3 +20,18 @@ function validarFormulario() {
         document.getElementById('Registro').submit();
     }
 }
+
+// Mientras la pagina esta activa
+window.addEventListener('load', () => {
+
+    document.getElementById("nombre").addEventListener("keydown", function (e) {
+        if (isFinite(e.key) && e.key != " ") {
+            console.log("tecla: " + e.key);
+            e.preventDefault();
+        }
+    });
+
+})
+
+
+

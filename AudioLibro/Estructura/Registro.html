@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Estilos/Registro.css">
+    <script src="../Scripts/Vali_registro.js"></script>
+    <title>Registro</title>
+</head>
+
+<body>
+    <section class="form-register">
+        <h4>Formulario Registro</h4>
+        <form id="Registro" method="post" action="../Backend/Registro.php">
+
+            <p><label for="nombre">Nombre</label></p>
+            <input class="controls" type="text" name="nombre" id="nombre" placeholder="Ingrese su Nombre">
+
+            <p><label for="apellido">Apellido</label></p>
+            <input class="controls" type="text" name="apellido" id="apellido" placeholder="Ingrese su Apellido">
+
+            <p><label for="email">Email</label></p>
+            <input class="controls" type="email" name="email" id="email" placeholder="Ejemplo@correo.com">
+
+            <p><label for="contrasena">Ingrese una Contrasena</label></p>
+            <input class="controls" type="password" name="contrasena" id="contrasena" placeholder="*****">
+
+            <p><label for="contrasena_2">Confirme Contrasena</label></p>
+            <input class="controls" type="password" name="contrasena_2" id="contrasena_2" placeholder="*****">
+
+            <div id="Terminos">
+                <p>Estoy de acuerdo con los <a onclick="Terminos_Condiciones()">Terminos y Condiciones</a></p>
+            </div>
+
+            <input class="botons" id="subir" type="button" value="Registrar" onclick="validarFormulario()">
+        </form>
+
+        <a href="Login.html">
+            <p>Ya tengo Cuenta</p>
+        </a>
+    </section>
+</body>
+
+</html>

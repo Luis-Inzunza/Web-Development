@@ -51,15 +51,26 @@ body {
 
 .form-register p {
     height: 100%;
-    text-align: center;
+    text-align: left;
     font-size: 150%;
     line-height: 40px;
     color: darkslategrey;
 }
 
+#Terminos p {
+    text-align: center;
+}
+
+
 .form-register a {
     color: darkslategrey;
     text-decoration: none;
+}
+
+.form-register a p {
+    color: darkslategrey;
+    text-decoration: none;
+    text-align: center;
 }
 
 .form-register a:hover {

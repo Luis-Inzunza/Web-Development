@@ -10,7 +10,7 @@ body {
     max-width: 600px;
     margin: 0 auto;
     background-color: #f7f7f7;
-    border: 1px solid #ddd;
+    border: 1px solid #921d1d;
     border-radius: 5px;
     display: flex;
     margin-top: 10%;
@@ -44,7 +44,7 @@ select {
     padding-right: 25px;
 }
 
-input[type="submit"] {
+input[type="button"] {
     background-color: #0078d4;
     color: white;
     padding: 10px 20px;
@@ -57,12 +57,12 @@ input[type="submit"]:hover {
     background-color: #00539b;
 }
 
-.image-container {
-    flex: 1;
+#preview_portada {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 20px;
     border-radius: 10px;
 }
 
@@ -85,4 +85,9 @@ img {
 
 #btn-cerrar:hover {
     background-color: #c0392b;
+}
+
+#form_img {
+    display: flex;
+    flex-direction: row;
 }

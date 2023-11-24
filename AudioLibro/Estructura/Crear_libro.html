@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Estilos/Crear_libro.css">
+    <script src="../Scripts/Libros.js"></script>
+    <title>Crear libro</title>
+</head>
+
+<body>
+    <div id="form-container">
+        <form id="form" method="post" action="../Backend/Registro_libro.php">
+
+            <label for="titulo">Título del libro</label>
+            <input id="titulo" type="text" placeholder="Llama la atencion" required>
+
+            <label for="color_titulo">Color del Titulo</label>
+            <input type="color" id="color_titulo" name="colorTexto" required> <br>
+
+            <label for="color_portada">Color de fondo de portada</label>
+            <input type="color" id="color_portada" name="colorTexto" required> <br>
+
+            <label for="enfoque">Cual es el enfoque de tu libro?</label>
+            <input id="enfoque" type="text" placeholder="Que te inspira o que mensaje daras?" required>
+            <span id="form_img">
+                <input type="checkbox" name="" id="imagen?">
+                <label for="image">Imagen de portada</label>
+            </span>
+            <input type="file" name="image" id="image" accept="image/*">
+
+            <input type="button" id="crear" value="Crear Libro y empezar nueva pagina" onclick="subirLibro();">
+        </form>
+        <div id="preview_portada">
+            <header>hola</header>
+            <img src="perro.png" alt="Preview Image">
+        </div>
+    </div>
+    <div name="cerrar">
+        <button id="btn-cerrar" onclick="Regresar()">Cancelar</button>
+    </div>
+</body>
+
+</html>

@@ -11,5 +11,5 @@
             // Si no hay sesión, realizar alguna acción alternativa o redirigir, etc.
             echo 'No hay sesión de usuario.';
       }
-      header("Location: ../templates/login.html");
+      header("Location: ../Estructura/Login.html");
 ?>

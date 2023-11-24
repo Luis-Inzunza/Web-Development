@@ -1,21 +1,21 @@
+console.log("js conectado");
+
 window.addEventListener('load', () => {
     let loginFormulario = document.getElementById('formularioLogin');
-    
+
     loginFormulario.addEventListener('submit', function (event) {
-        event.preventDefault();
+        reventDefault();
         let email = document.getElementById('email').value;
-        if (!emailVerificacion(email)) {
+        if (!validarEmail(email)) {
             let emailInput = document.getElementById('email');
             emailInput.style.border = "2px solid red";
             emailInput.focus();
         }
     })
-})
+});
 
-
-function emailVerificacion(email) {
-    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-    console.log("emailVerificacion:", result);
-    return emailRegex.test(email);
-}
-
+function validarEmail(email) {
+    // Expresión regular para validar el formato de un email
+    const regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    return regexEmail.test(email);
+};
