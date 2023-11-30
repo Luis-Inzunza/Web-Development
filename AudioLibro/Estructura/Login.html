@@ -2,23 +2,27 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Estilos/Login.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Login</title>
-    <link rel="stylesheet" href="../Estilos/Login.css">
-    <script src="../Scripts/Vali_login.js"></script>
 </head>
 
 <body>
-    <form id="formularioLogin">
+    <h1>Sistema de creacion de cuentos Web</h1>
+    <form id="Login" method="POST" action="../Backend/Login.php">
         <h2>Bienvenido</h2>
 
-        <input type="email" id="email" placeholder="Email" class="error">
-        <input type="password" id="password" placeholder="Contraseña">
+        <input type="email" id="email" name="email" placeholder="Email" class="error" />
+        <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" />
 
-        <a href="Menu_principal.html" id="Ingresar">Ingresar</a>
+        <input type="button" id="Ingresar" value="Ingresar" onclick="validarFormulario()">
+
+
         <p><a href="Registro.html">Aún no tengo cuenta</a></p>
     </form>
+    <script src="../Scripts/Vali_login.js"></script>
 </body>
 
 </html>

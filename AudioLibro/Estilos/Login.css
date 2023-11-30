@@ -4,26 +4,61 @@
     box-sizing: border-box;
 }
 
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 body {
-    font-family: Helvetica Neue, sans-serif;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: white;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-image: linear-gradient(0deg, #23d5ab, #23a6d5);
+    animation: gradient 1s ease infinite;
+}
+
+h1 {
+    font-size: 300%;
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: rgb(213, 239, 239);
+    margin-bottom: 20%;
+    z-index: 2;
 }
 
 form {
     padding: 50px;
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 30%;
     box-shadow: 7px 13px 37px #000;
     border-radius: 15px;
-    background-color: rgb(232, 247, 249);
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 3;
+}
+
+#panel {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    text-align: left;
+    text-size-adjust: 100%;
+    z-index: 1;
+}
+
+#panel p {
+    font-size: 20px;
+    text-align: left;
+    color: rgb(25, 43, 43);
+    margin-bottom: 1%;
 }
 
 h2 {
@@ -41,18 +76,6 @@ p {
 
 }
 
-#Ingresar {
-    text-align: center;
-    color: white;
-    padding: 7% 5%;
-    border: 2px solid cornflowerblue;
-    border-radius: 25px;
-    margin-bottom: 25px;
-    background-color: rgb(255, 255, 255);
-    outline: none;
-    font-size: 17px;
-}
-
 p {
     height: 40px;
     text-align: center;
@@ -61,13 +84,15 @@ p {
     color: rgb(25, 43, 43);
 }
 
-label span {
-    color: red;
-    opacity: 0;
+a {
+    text-decoration: none;
+    color: rgb(25, 43, 43);
+
 }
 
 
-input {
+
+form input {
     padding: 7% 5%;
     border: 2px solid cornflowerblue;
     border-radius: 25px;
@@ -78,31 +103,33 @@ input {
 }
 
 
-#formularioLogin a {
+#Login a {
     color: rgb(25, 43, 43);
     text-decoration: none;
-}
-
-#formularioLogin a:hover {
-    color: rgb(28, 31, 31);
-    text-decoration: underline;
+    font-weight: bold;
 }
 
 
 #Ingresar {
-    background-color: cornflowerblue;
-    font-size: 15px;
-    color: whitesmoke;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background-color 0.2s;
+    width: 100%;
+    font-weight: bolder;
+    background: cornflowerblue;
+    border: solid 1%;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+    border-radius: 25px;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 #Ingresar:hover {
     background-color: whitesmoke;
+    border: solid 1%;
+    border-color: cornflowerblue;
     color: cornflowerblue;
+    cursor: pointer;
 }
-
 
 @media(max-width:991px) {
     body {
