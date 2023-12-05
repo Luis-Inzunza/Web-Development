@@ -11,6 +11,13 @@ a {
 
 #cerrar {}
 
+#id01 {
+    opacity: 0; /* Inicialmente, establece la opacidad en 0 */
+    visibility: hidden; /* Y la visibilidad en oculto */
+    transition: opacity 0.5s ease; /* Aplica una transición suave a la opacidad */
+}
+
+
 #cerrar:hover {
     color: rgb(215, 205, 20);
 }

@@ -1,8 +1,6 @@
 <?php
 
-    include('BDcon.php');
-    session_start();
-
+    include 'BDcon.php';
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -20,21 +18,19 @@
 
             // Consulta SQL para insertar un nuevo registro
             $sql = "INSERT INTO usuarios (nombre, apellido, email, contrasena)
-        VALUES ('$nombre', '$apellido', '$email', '$contrasena')";
-            
+            VALUES ('$nombre', '$apellido', '$email', '$contrasena')";
 
             if ($con->query($sql) === true) {
-                echo "Registro insertado exitosamente";
-                header("Location: ../Estructura/Registro_exitoso.html");
+                header("Location: ../Estructura/Registro.html?mensaje=RegistroExitoso");
 
                 $_SESSION['usuario'] = $nombre;
             } else {
-                echo "Error al insertar el registro: " . $con->error;
+                header("Location: ../Estructura/Registro.html?mensaje=RegistroFallido");
             }
 
             exit();
         } else {
-            echo "Por favor, completa todos los campos.";
+            header("Location: ../Estructura/Registro.html?mensaje=AlgoSalioMal");
         }
     }
 
@@ -47,4 +43,4 @@
         return true; // Si todos los campos están completos, devuelve verdadero
     }
 
-?>
+    $con->close();

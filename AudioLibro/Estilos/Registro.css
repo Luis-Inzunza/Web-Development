@@ -4,15 +4,28 @@
     box-sizing: border-box;
 }
 
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 body {
-    background: whitesmoke;
+    background-image: linear-gradient(0deg, #23d5ab, #23a6d5);
+    animation: gradient 1s ease infinite;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 12%;
+    animation: gradient 1s ease infinite;
 }
 
-.form-register {
+#form-register {
     width: 60%;
     height: 10%;
     background: rgb(232, 247, 249);
@@ -22,13 +35,20 @@ body {
     margin: auto;
     border-radius: 15px;
     font-family: 'calibri';
-    color: white;
     box-shadow: 7px 13px 37px #000;
 }
 
-.form-register h4 {
+h1 {
+    font-size: 250%;
+    margin-bottom: 5%;
+    text-transform: capitalize;
+    color: rgb(213, 239, 239);
+    text-align: center;
+}
+
+h4 {
     font-size: 200%;
-    margin-bottom: 20px;
+    margin-bottom: 5%;
     color: darkslategrey;
     text-align: center;
 }
@@ -38,9 +58,8 @@ body {
     background: white;
     padding: 5%;
     border-radius: 25px;
-    margin-bottom: 10%;
+    margin-bottom: 8%;
     border: 2px solid #1f53c5;
-    font-family: 'calibri';
     font-size: 100%;
     color: #24303c;
 }
@@ -49,7 +68,7 @@ body {
     padding-bottom: 5%;
 }
 
-.form-register p {
+#form-register p {
     height: 100%;
     text-align: left;
     font-size: 150%;
@@ -62,23 +81,23 @@ body {
 }
 
 
-.form-register a {
+#form-register a {
     color: darkslategrey;
     text-decoration: none;
 }
 
-.form-register a p {
+#form-register a p {
     color: darkslategrey;
     text-decoration: none;
     text-align: center;
 }
 
-.form-register a:hover {
+#form-register a:hover {
     color: rgb(28, 31, 31);
     text-decoration: underline;
 }
 
-.form-register .botons {
+#subir {
     width: 100%;
     background: cornflowerblue;
     border: none;
@@ -88,20 +107,29 @@ body {
     font-size: 16px;
     border-radius: 25px;
     border: 2px solid cornflowerblue;
+    transition: background-color 0.2s, color 0.2s;
 }
 
-.form-register .botons:hover {
+#form-register .botons:hover {
     background-color: whitesmoke;
     color: cornflowerblue;
     border: 2px solid #1f53c5;
 }
 
-#subir:disabled {
-    background-color: #000;
+#panel {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    text-align: left;
+    text-size-adjust: 100%;
+    z-index: 1;
 }
 
-#subir:disabled:hover {
-    background-color: #000;
+#panel p {
+    font-size: 20px;
+    text-align: left;
+    color: rgb(25, 43, 43);
+    margin-bottom: 1%;
 }
 
 @media(min-width:991px) {
@@ -110,7 +138,7 @@ body {
         margin-top: 5%;
     }
 
-    .form-register {
+    #form-register {
         width: 40%;
     }
 }
