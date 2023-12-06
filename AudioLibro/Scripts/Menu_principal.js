@@ -73,8 +73,8 @@ function insertarLibrosEnDocumento() {
           <span onclick="cerrarModal('modal` + librosCont + `')" class="w3-button w3-display-topright">&times;</span>
           <p>Titulo: `+ libro.titulo + `</p>
           <p>Autor: `+ usuario.Nombre + ` ` + usuario.Apellido + `</p>
-          <p>Ultimo Cambio: #p_fecha de modificacion</p>
-          <p>Enfoque: #p_Enfoque</p>
+          <p>Ultimo Cambio:`+ libro.fecha + ` </p>
+          <p>Enfoque: `+ libro.enfoque + `</p>
         </div>
         <div class="w3-bar">
         <button class="w3-bar-item w3-button w3-hover-aqua w3-center">Editar</button>

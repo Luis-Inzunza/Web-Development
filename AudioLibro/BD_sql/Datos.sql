@@ -1,7 +1,5 @@
--- Datos artificiales para Usuario
-
 INSERT INTO
-    USUARIOS (
+    Usuarios (
         Nombre,
         Apellido,
         Email,
@@ -11,50 +9,74 @@ VALUES (
         'Juan',
         'Pérez',
         'juan@example.com',
-        'contraseña1'
+        'contrasena1'
     ), (
         'María',
         'González',
         'maria@example.com',
-        'contraseña2'
-    ), (
-        'Carlos',
-        'López',
-        'carlos@example.com',
-        'contraseña3'
+        'contrasena2'
     );
-
--- Datos artificuales para Libros
 
 INSERT INTO
-    Libros (Titulo, Direc_img, Color)
+    Libros (
+        Titulo,
+        Enfoque,
+        Direc_img,
+        Color_titulo,
+        Color_fondo,
+        Usuario_id
+    )
 VALUES (
-        'El señor de los anillos',
-        'imagen1.jpg',
-        'Verde'
+        'Libro 1',
+        'Ficción',
+        'img_libro1.jpg',
+        'FFFFFF',
+        '000000',
+        1
     ), (
-        'Cien años de soledad',
-        'imagen2.jpg',
-        'Azul'
+        'Libro 2',
+        'No ficción',
+        'img_libro2.jpg',
+        'FF0000',
+        '00FF00',
+        1
+    ), (
+        'Libro 3',
+        'Fantasía',
+        'img_libro3.jpg',
+        '0000FF',
+        'FFFF00',
+        1
+    ), (
+        'Libro 4',
+        'Misterio',
+        'img_libro4.jpg',
+        '00FFFF',
+        'FF00FF',
+        1
+    ), (
+        'Libro 5',
+        'Aventura',
+        'img_libro5.jpg',
+        '000000',
+        'FFFFFF',
+        1
     );
-
--- Datos artificiales para Paginas
 
 INSERT INTO
     Paginas (
-        Titulo_Libro,
-        Index_Pag,
+        Titulo_libro,
+        Index_pag,
         Texto,
-        Color_Texto,
-        Color_Fondo,
+        Color_texto,
+        Color_fondo,
         Formato,
         Audio,
         Voz,
-        Subrayado,
-        Direc_img
+        Subrayado
     )
 VALUES (
-        'El señor de los anillos',
+        'Libro 1',
         1,
         'Texto página 1',
         'Negro',
@@ -62,10 +84,9 @@ VALUES (
         1,
         TRUE,
         1,
-        FALSE,
-        'imagen1_pag1.jpg'
+        FALSE
     ), (
-        'El señor de los anillos',
+        'Libro 1',
         2,
         'Texto página 2',
         'Blanco',
@@ -73,10 +94,9 @@ VALUES (
         2,
         FALSE,
         0,
-        TRUE,
-        'imagen1_pag2.jpg'
+        TRUE
     ), (
-        'El señor de los anillos',
+        'Libro 1',
         3,
         'Texto página 3',
         'Azul',
@@ -84,10 +104,9 @@ VALUES (
         3,
         TRUE,
         1,
-        FALSE,
-        'imagen1_pag3.jpg'
+        FALSE
     ), (
-        'El señor de los anillos',
+        'Libro 1',
         4,
         'Texto página 4',
         'Verde',
@@ -95,10 +114,9 @@ VALUES (
         1,
         FALSE,
         0,
-        TRUE,
-        'imagen1_pag4.jpg'
+        TRUE
     ), (
-        'El señor de los anillos',
+        'Libro 1',
         5,
         'Texto página 5',
         'Rojo',
@@ -106,61 +124,57 @@ VALUES (
         2,
         TRUE,
         1,
-        TRUE,
-        'imagen1_pag5.jpg'
-    ), (
-        'Cien años de soledad',
-        1,
-        'Texto página 1',
-        'Negro',
-        'Blanco',
-        3,
-        TRUE,
-        0,
-        FALSE,
-        'imagen2_pag1.jpg'
-    ), (
-        'Cien años de soledad',
-        2,
-        'Texto página 2',
-        'Blanco',
-        'Negro',
-        1,
-        FALSE,
-        1,
-        TRUE,
-        'imagen2_pag2.jpg'
-    ), (
-        'Cien años de soledad',
-        3,
-        'Texto página 3',
-        'Azul',
-        'Amarillo',
-        2,
-        TRUE,
-        0,
-        FALSE,
-        'imagen2_pag3.jpg'
-    ), (
-        'Cien años de soledad',
-        4,
-        'Texto página 4',
-        'Verde',
-        'Rojo',
-        3,
-        FALSE,
-        1,
-        TRUE,
-        'imagen2_pag4.jpg'
-    ), (
-        'Cien años de soledad',
-        5,
-        'Texto página 5',
-        'Rojo',
-        'Verde',
-        1,
-        TRUE,
-        0,
-        TRUE,
-        'imagen2_pag5.jpg'
-    );
+        TRUE
+    ),
+
+ (
+    'Libro 2',
+    1,
+    'Texto página 1',
+    'Negro',
+    'Blanco',
+    3,
+    TRUE,
+    0,
+    FALSE
+), (
+    'Libro 2',
+    2,
+    'Texto página 2',
+    'Blanco',
+    'Negro',
+    1,
+    FALSE,
+    1,
+    TRUE
+), (
+    'Libro 2',
+    3,
+    'Texto página 3',
+    'Azul',
+    'Amarillo',
+    2,
+    TRUE,
+    0,
+    FALSE
+), (
+    'Libro 2',
+    4,
+    'Texto página 4',
+    'Verde',
+    'Rojo',
+    3,
+    FALSE,
+    1,
+    TRUE
+), (
+    'Libro 2',
+    5,
+    'Texto página 5',
+    'Rojo',
+    'Verde',
+    1,
+    TRUE,
+    0,
+    TRUE
+);

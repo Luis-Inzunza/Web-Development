@@ -7,6 +7,8 @@ a {
     text-decoration: none;
 }
 
+
+
 /* Clases y Ids  (con sus especificaciones)*/
 
 .modales {
@@ -21,6 +23,9 @@ a {
 
 #Libreria {
     padding-top: 5%;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 5%;
 }
 
 .Libro img {

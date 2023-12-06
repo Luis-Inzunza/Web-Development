@@ -5,7 +5,7 @@
     if(isset($_GET['Id'])) {
         $Id = $_GET['Id'];
 
-        $sql = "SELECT * FROM libros WHERE usuario_id = '$Id'";
+        $sql = "SELECT * FROM Libros WHERE Usuario_id = '$Id'";
 
         $resultado = $con->query($sql);
 
@@ -19,11 +19,14 @@
         }
 
         while($libro = $resultado->fetch_assoc()){
-            if($libro['Usuario_ID'] == $Id){
+            if($libro['Usuario_id'] == $Id){
                 $datos[] = array(
                     "titulo" => $libro['Titulo'],
+                    "enfoque" => $libro['Enfoque'],
                     "img" => $libro['Direc_img'],
-                    "color" => $libro['Color'],);
+                    "color_titulo" => $libro['Color_titulo'],
+                    "color_fondo" => $libro['Color_fondo'],
+                    "fecha" => $libro['Ultima_modificacion']);
             }
         }
 
