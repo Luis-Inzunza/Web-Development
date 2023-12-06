@@ -1,12 +1,33 @@
+//Inicio de javascript
 console.log("js conectado");
 
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('Id');
+
 let datos;
+
+obtenerNombreUsuario();
 mandarUrlPhp();
 insertarLibrosEnDocumento();
 
 
+// Funciones //
+
+function obtenerNombreUsuario() {
+  let xhr = new XMLHttpRequest();
+  xhr.open('GET', '../Backend/Menu_principal_usuario.php?Id=' + id, false);
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      // Respuesta del servidor (PHP)
+      datos = JSON.parse(xhr.responseText);
+      console.log(datos);
+    }
+  };
+  xhr.send();
+  let elementoNombre = document.querySelector('#usuario');
+  elementoNombre.innerHTML = datos.Nombre + " " + datos.Apellido;
+}
 
 function mandarUrlPhp() {
   let xhr = new XMLHttpRequest();
