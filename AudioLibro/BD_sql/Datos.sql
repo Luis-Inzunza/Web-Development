@@ -1,3 +1,5 @@
+-- Insertar dos usuarios
+
 INSERT INTO
     Usuarios (
         Nombre,
@@ -17,6 +19,8 @@ VALUES (
         'contrasena2'
     );
 
+-- Insertar libros asociados al primer usuario (Juan)
+
 INSERT INTO
     Libros (
         Titulo,
@@ -24,44 +28,50 @@ INSERT INTO
         Direc_img,
         Color_titulo,
         Color_fondo,
-        Usuario_id
+        Usuario_id,
+        ultima_modificacion
     )
 VALUES (
-        'Libro 1',
-        'Ficción',
-        'img_libro1.jpg',
-        'FFFFFF',
-        '000000',
-        1
-    ), (
-        'Libro 2',
-        'No ficción',
-        'img_libro2.jpg',
-        'FF0000',
-        '00FF00',
-        1
-    ), (
-        'Libro 3',
-        'Fantasía',
-        'img_libro3.jpg',
-        '0000FF',
-        'FFFF00',
-        1
-    ), (
-        'Libro 4',
-        'Misterio',
-        'img_libro4.jpg',
-        '00FFFF',
-        'FF00FF',
-        1
-    ), (
-        'Libro 5',
+        'Libro de Juan 1',
         'Aventura',
-        'img_libro5.jpg',
-        '000000',
-        'FFFFFF',
-        1
+        'gatito.png',
+        '#FFFFFF',
+        '#000000',
+        1,
+        CURRENT_TIMESTAMP
     );
+
+-- Insertar libros asociados al segundo usuario (María)
+
+INSERT INTO
+    Libros (
+        Titulo,
+        Enfoque,
+        Direc_img,
+        Color_titulo,
+        Color_fondo,
+        Usuario_id,
+        ultima_modificacion
+    )
+VALUES (
+        'Libro de María 1',
+        'Fantasía',
+        'img_libro1',
+        '#FF0000',
+        '#00FF00',
+        2,
+        CURRENT_TIMESTAMP
+    ), (
+        'Libro de María 2',
+        'Misterio',
+        'otra_imagen.png',
+        '#0000FF',
+        '#FFFF00',
+        2,
+        CURRENT_TIMESTAMP
+    );
+
+-- Insertar páginas para el libro de Juan (usuario ID 1)
 
 INSERT INTO
     Paginas (
@@ -76,105 +86,79 @@ INSERT INTO
         Subrayado
     )
 VALUES (
-        'Libro 1',
+        'Libro de Juan 1',
         1,
         'Texto página 1',
-        'Negro',
-        'Blanco',
+        '#000000',
+        '#FFFFFF',
         1,
         TRUE,
         1,
         FALSE
     ), (
-        'Libro 1',
+        'Libro de Juan 1',
         2,
         'Texto página 2',
-        'Blanco',
-        'Negro',
+        '#FFFFFF',
+        '#000000',
         2,
         FALSE,
         0,
         TRUE
-    ), (
-        'Libro 1',
-        3,
-        'Texto página 3',
-        'Azul',
-        'Amarillo',
+    );
+
+-- Insertar páginas para los libros de María (usuario ID 2)
+
+INSERT INTO
+    Paginas (
+        Titulo_libro,
+        Index_pag,
+        Texto,
+        Color_texto,
+        Color_fondo,
+        Formato,
+        Audio,
+        Voz,
+        Subrayado
+    )
+VALUES (
+        'Libro de María 1',
+        1,
+        'Texto página 1',
+        '#FF0000',
+        '#00FF00',
         3,
         TRUE,
-        1,
+        0,
         FALSE
     ), (
-        'Libro 1',
-        4,
-        'Texto página 4',
-        'Verde',
-        'Rojo',
+        'Libro de María 1',
+        2,
+        'Texto página 2',
+        '#00FF00',
+        '#FF0000',
         1,
         FALSE,
-        0,
-        TRUE
-    ), (
-        'Libro 1',
-        5,
-        'Texto página 5',
-        'Rojo',
-        'Verde',
-        2,
-        TRUE,
         1,
         TRUE
-    ),
-
- (
-    'Libro 2',
-    1,
-    'Texto página 1',
-    'Negro',
-    'Blanco',
-    3,
-    TRUE,
-    0,
-    FALSE
-), (
-    'Libro 2',
-    2,
-    'Texto página 2',
-    'Blanco',
-    'Negro',
-    1,
-    FALSE,
-    1,
-    TRUE
-), (
-    'Libro 2',
-    3,
-    'Texto página 3',
-    'Azul',
-    'Amarillo',
-    2,
-    TRUE,
-    0,
-    FALSE
-), (
-    'Libro 2',
-    4,
-    'Texto página 4',
-    'Verde',
-    'Rojo',
-    3,
-    FALSE,
-    1,
-    TRUE
-), (
-    'Libro 2',
-    5,
-    'Texto página 5',
-    'Rojo',
-    'Verde',
-    1,
-    TRUE,
-    0,
-    TRUE
-);
+    ), (
+        'Libro de María 2',
+        1,
+        'Texto página 1',
+        '#0000FF',
+        '#FFFF00',
+        2,
+        TRUE,
+        0,
+        FALSE
+    ), (
+        'Libro de María 2',
+        2,
+        'Texto página 2',
+        '#FFFF00',
+        '#0000FF',
+        3,
+        FALSE,
+        1,
+        TRUE
+    );

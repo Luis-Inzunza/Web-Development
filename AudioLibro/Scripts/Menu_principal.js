@@ -115,3 +115,12 @@ function cerrarModal(id) {
 function cerrarSesion() {
   console.log("cerraste sesion");
 }
+
+// Redireccionar a crear libro
+let enlace = document.getElementById('redirigir');
+
+enlace.addEventListener('click', function (event) {
+  event.preventDefault();
+  window.location.href = "Crear_libro.html?Id=" + id;
+});
+

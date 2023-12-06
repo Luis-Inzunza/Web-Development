@@ -26,7 +26,7 @@
                     "img" => $libro['Direc_img'],
                     "color_titulo" => $libro['Color_titulo'],
                     "color_fondo" => $libro['Color_fondo'],
-                    "fecha" => $libro['Ultima_modificacion']);
+                    "fecha" => $libro['ultima_modificacion']);
             }
         }
 
@@ -43,4 +43,3 @@
     } else {
         echo "No se recibió ninguna URL.";
     }
-    $con.close();

@@ -16,13 +16,12 @@ CREATE TABLE
         Titulo VARCHAR(100) PRIMARY KEY,
         Enfoque VARCHAR(100),
         Direc_img VARCHAR(100),
-        Color_titulo VARCHAR(6),
-        Color_fondo VARCHAR(6),
+        Color_titulo VARCHAR(7),
+        Color_fondo VARCHAR(7),
         Usuario_id INT,
+        ultima_modificacion TIMESTAMP,
         FOREIGN KEY (Usuario_id) REFERENCES Usuarios(Id)
     );
-
-ALTER TABLE libros ADD COLUMN ultima_modificacion TIMESTAMP;
 
 -- Paginas (la informacion a presentar en las paginas), tiene una relacion Libros 1--a--n paginas
 
@@ -31,8 +30,8 @@ CREATE TABLE
         Titulo_libro VARCHAR(100),
         Index_pag INT,
         Texto TEXT,
-        Color_texto VARCHAR(20),
-        Color_fondo VARCHAR(20),
+        Color_texto VARCHAR(7),
+        Color_fondo VARCHAR(7),
         Formato TINYINT,
         Audio BOOLEAN,
         Voz TINYINT,
