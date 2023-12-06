@@ -28,7 +28,7 @@
         }
 
 
-        if(empty($datos)){
+        if(!empty($datos)){
             $json_datos = json_encode($datos);
             header('Content-Type: application/json');
             echo $json_datos;
