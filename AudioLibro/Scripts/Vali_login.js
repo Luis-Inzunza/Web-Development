@@ -43,7 +43,7 @@ function validarEmail(email) {
 function RespuestaLogin() {
     const urlParams = new URLSearchParams(window.location.search);
     const mensaje = urlParams.get('mensaje');
-    console.log(mensaje);
+    //console.log(mensaje);
 
     if (mensaje == 'NoLlegaronDatos')
         MostrarMensaje(mensaje, 'yellow');

@@ -25,7 +25,7 @@
 
         while($usuario = $resultado->fetch_assoc()){
             if($usuario['Email'] == $email && $usuario['Contrasena'] == $contrasena){
-                header("Location: ../Estructura/Menu_principal.html");
+                header("Location:../Estructura/Menu_principal.html?Id=".$usuario['Id']);
                 //iniciar sesion
                 exit();
             }
