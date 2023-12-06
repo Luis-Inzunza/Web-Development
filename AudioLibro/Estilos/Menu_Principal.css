@@ -9,17 +9,14 @@ a {
 
 /* Clases y Ids  (con sus especificaciones)*/
 
-#cerrar {}
-
-#id01 {
-    opacity: 0; /* Inicialmente, establece la opacidad en 0 */
-    visibility: hidden; /* Y la visibilidad en oculto */
-    transition: opacity 0.5s ease; /* Aplica una transición suave a la opacidad */
+.modales {
+    background-color: rgb(236, 241, 241);
 }
 
 
+
 #cerrar:hover {
-    color: rgb(215, 205, 20);
+    color: rgb(215, 20, 20);
 }
 
 #Libreria {
