@@ -16,7 +16,8 @@ function validarFormulario() {
         alert('El campo contiene instrucciones sospechosas. Por favor, introduzca lo indicado');
     } else if (validarEmail(email)) {
         console.log("LLego al ajaxS");
-        submit_ajax(email.value, contrasena.value)
+        document.getElementById('Login').submit();
+        //submit_ajax(email.value, contrasena.value)
     } else {
         alert('El email no es correcto.'); //Mejorar el manejo de esta parte;
     }
@@ -74,12 +75,12 @@ function MostrarMensaje(mensaje, color) {
 function submit_ajax(email, contrasena) {
     const http = new XMLHttpRequest();
     http.onreadystatechange = function () {
-        if(this.readyState == 4 && this.status == 200){
+        if (this.readyState == 4 && this.status == 200) {
             document.getElementById("prueba").innerHTML = this.responseText;
             console.log(this.responseText);
         }
     };
-    
+
     const params = "email=" + encodeURIComponent(email) + "&contrasena=" + encodeURIComponent(contrasena);
 
     http.open("POST", "../tribunales_amigables/modules/login_validations.php", true);

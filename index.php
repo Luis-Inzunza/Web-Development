@@ -13,7 +13,7 @@
 
 <body>
     <h1>Sistema de creacion de cuentos Web</h1>
-    <form id="Login" method="POST" action="../Backend/Login.php">
+    <form id="Login" method="POST" action="../Web_Books/modules/login_validations.php">
         <h2>Bienvenido</h2>
 
         <input type="email" id="email" name="email" placeholder="Email" class="error" />
