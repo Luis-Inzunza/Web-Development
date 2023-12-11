@@ -4,17 +4,15 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    background-color: #23a6d5;
 }
 
+
 #form-container {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #f7f7f7;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    display: flex;
-    margin-top: 10%;
-    margin-bottom: 5%;
+    margin: 2%;
+    box-shadow: 7px 13px 37px #000;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 #form {
@@ -44,7 +42,7 @@ select {
     padding-right: 25px;
 }
 
-input[type="submit"] {
+input[type="button"] {
     background-color: #0078d4;
     color: white;
     padding: 10px 20px;
@@ -57,12 +55,13 @@ input[type="submit"]:hover {
     background-color: #00539b;
 }
 
-.image-container {
-    flex: 1;
+#preview_portada {
+    flex: 2;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    padding: 10px;
+    justify-content: center;
+    padding: 20px;
     border-radius: 10px;
 }
 
@@ -83,6 +82,21 @@ img {
     text-align: center;
 }
 
+#btn-crear {
+    background-color: #3c4ae7;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
 #btn-cerrar:hover {
     background-color: #c0392b;
+}
+
+#form_img {
+    display: flex;
+    flex-direction: row;
 }
