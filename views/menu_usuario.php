@@ -56,15 +56,7 @@ $length = count($books);
     }
     ?>
     
-    <script>
-        for(i = 0; i< <?php echo $length; ?> ; i++){
-            let elementoCrear = document.querySelector('crear');
-            libro = document.getElementById('idBook'+ i);
-            elementoCrear.insertAdjacentHTML('beforebegin', libro);
-            modal = document.getElementById("modal" + i);
-            insertarModalEnDocumento(modal);
-        }
-    </script>
+   
 
         <a href="crear" class="w3-card w3-center w3-hover-shadow Libro crear" id="redirigir">
             <p>Crear Nuevo Libro</p>
@@ -74,6 +66,15 @@ $length = count($books);
     <!-- Aqui se colocan los modals/ventanas emergentes cuando quieres ver la informacion de uno de los libros -->
 
     <script src="../js/menu_principal.js"></script>
+    <script>
+        for(i = 0; i< <?php echo $length; ?> ; i++){
+            let elementoCrear = document.querySelector('crear');
+            libro = document.getElementById('idBook'+ i);
+            elementoCrear.insertAdjacentHTML('beforebegin', libro);
+            modal = document.getElementById("modal" + i);
+            insertarModalEnDocumento(modal);
+        }
+    </script>
 </body>
 
 </html>
