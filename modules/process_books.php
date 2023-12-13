@@ -1,6 +1,6 @@
 <?php
 include '../db/querys/books.php';
-include '../db/models/Book.php';
+//include '../db/models/Book.php';
 
 function list_all_user_books () {
     $cursor = select_all_user_books($_SESSION['id']);

@@ -21,7 +21,7 @@ class QueryManager {
                 self::HOST, self::USER, self::PASSWORD, self::SCHEMA
             );
         }
-        if (mysqli_connect_errno()) {
+        if (mysqli_connect_error()) {
             throw new Exception("data_base_error_exception");
         }
     }
