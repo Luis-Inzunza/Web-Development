@@ -50,7 +50,7 @@ $length = count($books);
             echo '</div>';
             echo '<div class="w3-bar">';
             echo '<form method="POST" action="ejemplo.php" id="" class="w3-bar-item w3-button w3-hover-red w3-green w3-center">';
-            echo '<button class="w3-bar-item w3-button w3-hover-aqua w3-green w3-center" onclick="redirigir()">Editar</button>';
+            echo '<button class="w3-bar-item w3-button w3-hover-aqua w3-green w3-center" onclick="redirigir()">Mostrar</button>';
             echo '</form>';
 
             echo '<form method="POST" action="crear_pagina.php" id="borrar_form' . $index_book . '" class="w3-bar-item w3-button w3-hover-red w3-green w3-center">';
