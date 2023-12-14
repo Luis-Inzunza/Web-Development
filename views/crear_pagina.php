@@ -12,9 +12,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulario y Div</title>
   <link rel="stylesheet" href="../css/Contenido_libro.css">
+  <link rel="stylesheet" href="../css/chat_style.css">
 </head>
 
 <body>
+<button id="btnInicio" onclick="openChat()" class="open-chat-button">Abrir Chat</button>
+
+
+<div class="chat-popup" id="myChat">
+    <div class="chat-container">
+        <div class="chat">
+            <div class="message system">ChatBot...</div>
+            <div class="message user">
+                <label for="userInput">Tú:</label>
+                <input type="text" id="userInput" onkeypress="checkEnter(event)">
+                <button onclick="getResponse()">Enviar</button>
+            </div>
+            <div class="message ai" id="response">Respuesta del ChatBot:</div>
+        </div>
+    </div>
+    <button type="button" onclick="closeChat()" class="cancel" id="btnCerrar">Cerrar</button>
+</div>
+
+<script src="../js/app.js"></script>
+
   <div class="container">
     <form class="formulario" action="../modules/save_page.php" method="POST" enctype="multipart/form-data">
       <label for="index_pag">Número de pagina</label>

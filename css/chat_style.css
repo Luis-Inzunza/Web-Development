@@ -1,0 +1,159 @@
+.chat-popup,
+.message-ai {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.chat-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.chat {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.message {
+    font-size: 14px;
+    padding: 10px;
+    margin: 5px;
+}
+
+.system {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    font-style: italic;
+}
+
+.user {
+    text-align: center;
+}
+
+.user input {
+    width: 90%;
+}
+
+.user button {
+    margin-top: 5px;
+}
+
+.ai {
+    background-color: #d9f9d9;
+    border-bottom: 1px solid #ccc;
+    overflow-y: auto;
+    max-height: 40%;
+}
+
+#response {
+    padding: 10px;
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+.writing-animation {
+    animation: writing 1.5s infinite alternate;
+}
+
+@keyframes writing {
+    to {
+        opacity: 0.5;
+    }
+}
+
+.chat-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+}
+
+.chat-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+
+.chat-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+    min-height: 200px;
+}
+
+.chat-container textarea:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+.form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.chat-container .cancel {
+    background-color: red;
+}
+
+.open-chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: #175359;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 10;
+}
+
+.open-chat-button:hover {
+    background-color: #0d2e31;
+}
+
+.chat-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+}
+
+.chat-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+
+.cancel {
+    background-color: #FF5C5C;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.cancel:hover {
+    background-color: #FF3333;
+}
