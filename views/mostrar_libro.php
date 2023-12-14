@@ -6,9 +6,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 
-$libro = find_by_titulo($titulo);
+$libro = process_book($titulo);
 
-//$paginas = puscar_paginas($titulo);
+$paginas = process_pages_by_titulo($titulo);
 
+foreach($paginas as $pagina) {
+  $libro->agregar_pagina($pagina);
+  echo $pagina;
+}
 
+$json_libro = json_encode($libro);
+
+echo $json_libro;
 ?>

@@ -49,8 +49,9 @@ $length = count($books);
             echo '<p>Enfoque :'  . $book->enfoque . '</p>';
             echo '</div>';
             echo '<div class="w3-bar">';
-            echo '<form method="POST" action="ejemplo.php" id="" class="w3-bar-item w3-button w3-hover-red w3-green w3-center">';
-            echo '<button class="w3-bar-item w3-button w3-hover-aqua w3-green w3-center" onclick="redirigir()">Mostrar</button>';
+            echo '<form method="POST" action="mostrar_libro.php" id="mostrar_pg_form_"'. $index_book . ' class="w3-bar-item w3-button w3-hover-red w3-green w3-center">';
+            echo '<input type="hidden" name="titulo_libro" value="' . $book->titulo . '">';
+            echo '<button class="w3-bar-item w3-button w3-hover-aqua w3-green w3-center" onclick="mostrar_libro('. $index_book .')">Mostrar</button>';
             echo '</form>';
 
             echo '<form method="POST" action="crear_pagina.php" id="borrar_form' . $index_book . '" class="w3-bar-item w3-button w3-hover-red w3-green w3-center">';
@@ -76,6 +77,10 @@ $length = count($books);
         <script>
             function nueva_pagina(id) {
                 document.getElementById('nueva_pagina_form_' + id).submit();
+            }
+
+            function mostrar_libro(id){
+                document.getElementById('mostrar_pg_form_' + id).submit();
             }
         </script>
 

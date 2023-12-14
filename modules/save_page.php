@@ -37,6 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_FILES['image']['name']
     );
     save_page($page);
-    header("location: ../views/crear_pagina.php?code=1");
+    header("location: ../views/menu_usuario.php");
     exit();
 }

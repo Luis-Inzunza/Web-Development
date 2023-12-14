@@ -14,6 +14,8 @@ class Book {
 
     public $ultima_modificacion;
 
+    public $paginas = array();
+
     public function __construct(
         string $titulo, string $enfoque, string $direc_img, string $color_titulo, string $color_fondo, string $usuario_id, $ultima_modificacion 
         ) {
@@ -36,6 +38,10 @@ class Book {
             $this->usuario_id,
             $this->ultima_modificacion
         );
+    }
+
+    public function agregar_pagina ($pagina) {
+        $this->paginas[] = $pagina;      
     }
 } 
 ?>
