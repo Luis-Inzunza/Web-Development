@@ -1,6 +1,7 @@
-<?php 
+<?php
+$titulo = 'empty';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $_SESSION['titulo_libro'] = $_POST['titulo_libro'];
+  $titulo = $_POST['titulo_libro'];
 }
 ?>
 <html>
@@ -15,7 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
   <div class="container">
-    <form class="formulario">
+    <form class="formulario" action="../modules/save_page.php" method="POST" enctype="multipart/form-data">
+      <label for="index_pag">Número de pagina</label>
+      <input type="text" id="index_pag" name="index_pag">
       <label for="texto">Texto</label>
       <textarea name="texto" id="texto" cols="30" rows="10"></textarea>
 
@@ -27,13 +30,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       <label for="formato">Formato</label>
       <select id="formato" name="formato">
-        <option value="opcion1">Opción 1</option>
-        <option value="opcion2">Opción 2</option>
-        <option value="opcion3">Opción 3</option>
+        <option value="1">Opción 1</option>
+        <option value="2">Opción 2</option>
+        <option value="3">Opción 3</option>
       </select>
 
-      <label for="imagen">Imagen</label>
-      <input type="file" id="imagen" name="imagen" accept="image/*">
+      <label for="image">Imagen</label>
+      <input type="file" name="image" id="image" accept="image/*">
 
       <label for="audioLibro" class="checkbox-label">
         Audio Libro
@@ -43,19 +46,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       <label for="voces">Voces</label>
       <select id="voces" name="voces">
-        <option value="voz1">Voz 1</option>
-        <option value="voz2">Voz 2</option>
-        <option value="voz3">Voz 3</option>
+        <option value="1">Voz 1</option>
+        <option value="2">Voz 2</option>
+        <option value="3">Voz 3</option>
       </select>
 
       <label for="subrayado" class="checkbox-label">
         Subrayado al hablar
-        <input type="checkbox" id="subrayado" name="subrayado" class="checkbox-input">
+        <input type="checkbox" id="subrayado" name="subrayado" class="checkbox-input" value="off">
         <span class="checkbox-custom"></span>
       </label>
-
+      <input type="hidden" name="titulo_libro" value="<?php echo $titulo ?>">;
       <button type="submit">Enviar</button>
     </form>
+
 
     <div class="divDerecha">
       Este es un div a la derecha.

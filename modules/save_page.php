@@ -1,7 +1,9 @@
 <?php
-include '../db/querys/books.php';
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+include '../db/querys/pages.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    //echo $_POST['imagen'];
     if(isset($_FILES['image'])){
         $image_file = $_FILES['image']['name'];
         echo "El nombre del archivo subido es: " . $image_file;
@@ -18,19 +20,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     echo $image_file;
-    echo '<br>';
 
-    $book = new Book(
-        $_POST['titulo'],
-        $_POST['enfoque'],
-        $image_file,
-        $_POST['color_titulo'],
-        $_POST['color_portada'],
-        $_SESSION['id'],
-        date("Y-m-d")
+    $audioLibro = isset($_POST['audioLibro']) ? 1 : 0;
+    $subrayado = isset($_POST['subrayado']) ? 1 : 0;
+
+    $page = new Pagina(
+        $_POST['titulo_libro'],
+        $_POST['index_pag'],
+        $_POST['texto'],
+        $_POST['colorTexto'],
+        $_POST['colorFondo'],
+        $_POST['formato'],
+        $audioLibro,
+        $_POST['voces'],
+        $subrayado,
+        $_FILES['image']['name']
     );
-    add_book($book);
-    header("location: ../views/menu_usuario.php");
+    save_page($page);
+    header("location: ../views/crear_pagina.php?code=1");
     exit();
 }
-?>

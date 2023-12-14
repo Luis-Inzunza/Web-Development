@@ -30,6 +30,7 @@ CREATE TABLE
         Titulo_libro VARCHAR(100),
         Index_pag INT,
         Texto TEXT,
+        Direc_img VARCHAR(100),
         Color_texto VARCHAR(7),
         Color_fondo VARCHAR(7),
         Formato TINYINT,

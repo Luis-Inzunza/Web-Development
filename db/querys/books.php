@@ -2,6 +2,9 @@
 include __DIR__ . '/../connection/connection.php';
 include __DIR__ . '/../models/Book.php';
 session_start();
+if(!isset($_SESSION['id'])){
+    header("location: ../views/menu_usuario.php");
+}
 
 function select_all_user_books($id_usuario){
     $query = "SELECT * FROM LIBROS WHERE USUARIO_ID = '$id_usuario'";
