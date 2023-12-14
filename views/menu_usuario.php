@@ -44,7 +44,7 @@ $length = count($books);
             echo '<div class="w3-modal-content modales">';
             echo '<span onclick="cerrarModal(\'modal' . $index_book . '\')" class="w3-button w3-display-topright">&times;</span>';
             echo '<p>Titulo:' . $book->titulo . '</p>';
-            echo '<p>Autor:'  /*. author->nombre*/ . '</p>';
+            echo '<p>Autor:'  . $_SESSION['nombre'] . '</p>';
             echo '<p>Ultimo Cambio :'  . $book->ultima_modificacion . '</p>';
             echo '<p>Enfoque :'  . $book->enfoque . '</p>';
             echo '</div>';

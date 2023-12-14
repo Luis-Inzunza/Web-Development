@@ -1,3 +1,4 @@
+
 <html lang="es">
 
 <head>
@@ -36,6 +37,13 @@
             <header id="encabezado">Titulo</header>
         </div>
     </div>
+
+    <div class="container">
+        <input type="search" id="searchInput" placeholder="Ingrese su búsqueda">
+        <button onclick="buscarImagenes()">Buscar</button>
+        <div id="resultados"></div>
+    </div>
+    <script src="../js/generar.js"></script>
     <div>
         <button id="btn-cerrar" onclick="regresar()">Cancelar y volver</button>
         <button id="btn-crear" onclick="subirLibro()">Crear Libro</button>
