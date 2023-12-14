@@ -34,7 +34,7 @@ $length = count($books);
         foreach ($books as $book) {
 
             echo '<div class="w3-card w3-center w3-hover-shadow Libro" id="idBook' . $index_book . '" onclick="abrirModal(\'modal' . $index_book . '\')">';
-            echo '<img src="../img/pico.jpeg" ' . /*$book->direc_img*/ 'alt="#p_Imagen del libro" class="w3-round">';
+            echo '<img src="../img/' . $book->direc_img . '" alt="#p_Imagen del libro" class="w3-round">';
             echo '<div class="w3-center">';
             echo '<p>' . $book->titulo . '</p>';
             echo '</div>';
