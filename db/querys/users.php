@@ -10,7 +10,6 @@
         $query = "SELECT * FROM usuarios WHERE email = '$email' AND contrasena = '$contrasena' ";
         try {
             $result_query = $query_manager->execute_query($query);
-            echo result_query->num_rows;
 
             if(mysqli_num_rows($result_query) == 1){
                 $user_fields = mysqli_fetch_assoc($result_query);

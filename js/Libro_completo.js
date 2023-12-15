@@ -30,9 +30,9 @@ class Libro {
     }
 }
 
-function obtenerLibro() {
+/*function obtenerLibro() {
     let xhr = new XMLHttpRequest();
-    xhr.open('GET', '../js/libro.json', false);
+    xhr.open('POST', '../views/mostrar_libro.php', false);
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
@@ -43,7 +43,7 @@ function obtenerLibro() {
         }
     };
     xhr.send();
-}
+}*/
 
 function crearLibro(datos_libro) {
     miLibro = new Libro(datos_libro.Libro.Titulo, datos_libro.Libro.Enfoque, datos_libro.Libro.Direc_img, datos_libro.Libro.Color_titulo, datos_libro.Libro.Color_fondo, datos_libro.Libro.Usuario_id, datos_libro.Libro.ultima_modificacion);
@@ -62,8 +62,9 @@ function crearLibro(datos_libro) {
     });
 }
 
+
 let miLibro = new Libro();
-obtenerLibro();
+crearLibro();
 console.log(miLibro.Paginas);
 
 // Generar de etiquetas para cada pagina del libro //
