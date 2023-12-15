@@ -1,8 +1,16 @@
 <?php
+session_start();
 $titulo = 'empty';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $titulo = $_POST['titulo_libro'];
+  $_SESSION['titulo'] = $_POST['titulo_libro'];
 }
+
+if (isset($_SESSION['titulo'])) {
+  $titulo = $_SESSION['titulo'];
+}
+echo '<p>' . $titulo .'</p>';
 ?>
 <html>
 
@@ -34,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <button type="button" onclick="closeChat()" class="cancel" id="btnCerrar">Cerrar</button>
 </div>
 
-<script src="../js/app.js"></script>
+
 
   <div class="container">
     <form class="formulario" action="../modules/save_page.php" method="POST" enctype="multipart/form-data">
@@ -77,15 +85,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="checkbox" id="subrayado" name="subrayado" class="checkbox-input" value="off">
         <span class="checkbox-custom"></span>
       </label>
-      <input type="hidden" name="titulo_libro" value="<?php echo $titulo ?>">;
+      <input type="hidden" name="titulo_libro" value="<?php 
+      if($titulo == 'empty'){
+        echo $_SESSION['titulo'];
+      } else {
+        echo $titulo;
+      }
+       
+       ?>">
       <button type="submit">Enviar</button>
+      <button onclick="regresar()">Cerrar</button>
     </form>
 
 
-    <div class="divDerecha">
-      Este es un div a la derecha.
+    <div id="preliminar" style="display: flex;">
+      <div id="texto_current" style="order: 2;"></div>
+      <div id="img_cuento" style="order: 1;"></div>
     </div>
   </div>
+  <script src="../js/app.js"></script>
+  <script src="../js/eventos_preliminares.js"></script>
+  <script>
+        function regresar() {
+            window.location.href = "menu_usuario.php";
+        }
+    </script>
 </body>
 
 </html>

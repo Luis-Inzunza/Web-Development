@@ -1,4 +1,3 @@
-
 <html lang="es">
 
 <head>
@@ -49,6 +48,7 @@
         <button id="btn-crear" onclick="subirLibro()">Crear Libro</button>
     </div>
     <script src="../js/crear_libro.js"></script>
+    
 </body>
 
 </html>
