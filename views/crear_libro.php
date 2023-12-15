@@ -37,6 +37,7 @@
         </div>
     </div>
 
+    
     <div class="container">
         <input type="search" id="searchInput" placeholder="Ingrese su búsqueda">
         <button onclick="buscarImagenes()">Buscar</button>

@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+    document.getElementById('cerrar').addEventListener('click', function() {
+        window.location.href = "menu_usuario.php";
+    });
     /**
      * Elementos para la preliminar 
      */

@@ -25,9 +25,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $subrayado = isset($_POST['subrayado']) ? 1 : 0;
 
     $page = new Pagina(
-        $_POST['titulo_libro'],
-        $_POST['index_pag'],
-        $_POST['texto'],
+        strip_tags(htmlentities($_POST['titulo_libro'], ENT_QUOTES)),
+        strip_tags(htmlentities($_POST['index_pag'],  ENT_QUOTES)),
+        strip_tags(htmlentities($_POST['texto'],  ENT_QUOTES)),
         $_POST['colorTexto'],
         $_POST['colorFondo'],
         $_POST['formato'],

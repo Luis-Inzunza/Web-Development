@@ -16,13 +16,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $image_file = '';
         echo "No se subió ningún archivo.";
     }
-
-    echo $image_file;
-    echo '<br>';
-
+    
     $book = new Book(
-        $_POST['titulo'],
-        $_POST['enfoque'],
+        strip_tags(htmlentities($_POST['titulo'],  ENT_QUOTES)),
+        strip_tags(htmlentities($_POST['enfoque'],  ENT_QUOTES)),
         $image_file,
         $_POST['color_titulo'],
         $_POST['color_portada'],

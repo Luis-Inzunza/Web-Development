@@ -12,7 +12,6 @@ $paginas = process_pages_by_titulo($titulo);
 
 foreach($paginas as $pagina) {
   $libro->agregar_pagina($pagina);
-  echo $pagina;
 }
 
 $json_libro = json_encode($libro);

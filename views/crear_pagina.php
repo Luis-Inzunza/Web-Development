@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 if (isset($_SESSION['titulo'])) {
   $titulo = $_SESSION['titulo'];
 }
-echo '<p>' . $titulo .'</p>';
+echo '<p>' . $titulo . '</p>';
 ?>
 <html>
 
@@ -24,23 +24,23 @@ echo '<p>' . $titulo .'</p>';
 </head>
 
 <body>
-<button id="btnInicio" onclick="openChat()" class="open-chat-button">Abrir Chat</button>
+  <button id="btnInicio" onclick="openChat()" class="open-chat-button">Abrir Chat</button>
 
 
-<div class="chat-popup" id="myChat">
+  <div class="chat-popup" id="myChat">
     <div class="chat-container">
-        <div class="chat">
-            <div class="message system">ChatBot...</div>
-            <div class="message user">
-                <label for="userInput">Tú:</label>
-                <input type="text" id="userInput" onkeypress="checkEnter(event)">
-                <button onclick="getResponse()">Enviar</button>
-            </div>
-            <div class="message ai" id="response">Respuesta del ChatBot:</div>
+      <div class="chat">
+        <div class="message system">ChatBot...</div>
+        <div class="message user">
+          <label for="userInput">Tú:</label>
+          <input type="text" id="userInput" onkeypress="checkEnter(event)">
+          <button onclick="getResponse()">Enviar</button>
         </div>
+        <div class="message ai" id="response">Respuesta del ChatBot:</div>
+      </div>
     </div>
     <button type="button" onclick="closeChat()" class="cancel" id="btnCerrar">Cerrar</button>
-</div>
+  </div>
 
 
 
@@ -85,31 +85,31 @@ echo '<p>' . $titulo .'</p>';
         <input type="checkbox" id="subrayado" name="subrayado" class="checkbox-input" value="off">
         <span class="checkbox-custom"></span>
       </label>
-      <input type="hidden" name="titulo_libro" value="<?php 
-      if($titulo == 'empty'){
-        echo $_SESSION['titulo'];
-      } else {
-        echo $titulo;
-      }
-       
-       ?>">
-      <button type="submit">Enviar</button>
-      <button onclick="regresar()">Cerrar</button>
-    </form>
+      <input type="hidden" name="titulo_libro" value="<?php
+                                                      if ($titulo == 'empty') {
+                                                        echo $_SESSION['titulo'];
+                                                      } else {
+                                                        echo $titulo;
+                                                      }
 
+                                                      ?>">
+      <button type="submit">Enviar</button>
+      
+    </form>
+    
 
     <div id="preliminar" style="display: flex;">
       <div id="texto_current" style="order: 2;"></div>
       <div id="img_cuento" style="order: 1;"></div>
     </div>
+
+    <button id="cerrar">Cerrar</button>
+    
   </div>
   <script src="../js/app.js"></script>
   <script src="../js/eventos_preliminares.js"></script>
-  <script>
-        function regresar() {
-            window.location.href = "menu_usuario.php";
-        }
-    </script>
+
+  
 </body>
 
 </html>
