@@ -15,7 +15,7 @@ function validarFormulario() {
     } else if (EsScript(email) || EsScript(contrasena)) {
         alert('El campo contiene instrucciones sospechosas. Por favor, introduzca lo indicado');
     } else if (validarEmail(email)) {
-        console.log("LLego al ajaxS");
+        console.log("paso");
         document.getElementById('Login').submit();
         //submit_ajax(email.value, contrasena.value)
     } else {

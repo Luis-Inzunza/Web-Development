@@ -1,0 +1,33 @@
+{
+    "Libro": {
+        "Titulo": "Libro de María 1",
+        "Enfoque": "Fantasía",
+        "Direc_img": "img_libro1",
+        "Color_titulo": "#FF0000",
+        "Color_fondo": "#00FF00",
+        "Usuario_id": 2,
+        "ultima_modificacion": "2023-11-21T12:00:00Z"
+    },
+    "Paginas": [
+        {
+            "Index_pag": 1,
+            "Texto": "Texto página 1",
+            "Color_texto": "#FF0000",
+            "Color_fondo": "#00FF00",
+            "Formato": 3,
+            "Audio": true,
+            "Voz": 0,
+            "Subrayado": false
+        },
+        {
+            "Index_pag": 2,
+            "Texto": "Texto página 2",
+            "Color_texto": "#00FF00",
+            "Color_fondo": "#FF0000",
+            "Formato": 1,
+            "Audio": false,
+            "Voz": 1,
+            "Subrayado": true
+        }
+    ]
+}
