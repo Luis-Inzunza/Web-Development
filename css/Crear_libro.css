@@ -103,19 +103,19 @@ img {
 
 @media print {
     body {
-        display: block; /* Cambio de flex a block */
+        display: block; 
         width: 100%;
-        height: auto; /* Altura ajustable para impresión */
+        height: auto; 
         margin: 0;
-        background-color: white; /* Fondo blanco para impresión */
-        color: black; /* Texto en negro para mejor legibilidad */
+        background-color: white; 
+        color: black; 
     }
 
     #form-container {
         margin: 2%;
-        box-shadow: none; /* Eliminar sombras para una impresión limpia */
-        border-radius: 0; /* Bordes rectos para una apariencia más formal en impresión */
-        background-color: white; /* Fondo blanco para imprimir */
+        box-shadow: none; 
+        border-radius: 0; 
+        background-color: white; 
     }
 
     #form {
@@ -126,9 +126,9 @@ img {
         width: 100%;
         padding: 10px;
         margin: 8px 0;
-        border: 1px solid black; /* Bordes en negro para mejor contraste */
-        border-radius: 0; /* Bordes rectos */
-        box-shadow: none; /* Sin sombra interna */
+        border: 1px solid black; 
+        border-radius: 0; 
+        box-shadow: none; 
     }
 
     label {
@@ -145,11 +145,11 @@ img {
 
     input[type="button"], input[type="submit"], #btn-cerrar, #btn-crear {
         background-color: #0078d4;
-        color: black; /* Texto en negro para impresión */
+        color: black; 
         padding: 10px 20px;
-        border: 1px solid black; /* Bordes definidos para botones */
-        border-radius: 0; /* Bordes rectos */
-        cursor: default; /* El cursor no es relevante en la impresión */
+        border: 1px solid black;    
+        border-radius: 0; 
+        cursor: default; 
     }
 
     input[type="submit"]:hover, #btn-cerrar:hover {
@@ -157,10 +157,10 @@ img {
     }
 
     #preview_portada, img, #btn-cerrar, #btn-crear, #form_img {
-        display: none; /* Ocultar elementos no esenciales para la impresión */
+        display: none; 
     }
 
-    /* Agregar marca de agua */
+
     body::after {
         content: "Impresion no Oficial"; 
         position: fixed;
@@ -168,7 +168,7 @@ img {
         left: 50%;
         transform: translate(-50%, -50%) rotate(-45deg);
         font-size: 5em;
-        color: rgba(0, 0, 0, 0.1); /* Color suave para la marca de agua */
+        color: rgba(0, 0, 0, 0.1);
         z-index: 9999;
         width: 100%;
         text-align: center;
