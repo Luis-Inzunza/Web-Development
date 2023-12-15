@@ -3,7 +3,6 @@ console.log("Libro_completo.js");
 // Creacion  y obtencion de datos del objeto libro //
 
 class Libro {
-
     constructor(titulo, enfoque, direc_img, color_titulo, color_fondo, usuario_id, ultima_modificacion) {
         this.Titulo = titulo;
         this.Enfoque = enfoque;
@@ -15,12 +14,14 @@ class Libro {
         this.Paginas = [];
     }
 
-    agregarPagina(index_pag, texto, color_texto, color_fondo, formato, audio, voz, subrayado) {
+    agregarPagina(titulo_libro, index_pag, texto, color_texto, color_fondo, imagen, formato, audio, voz, subrayado) {
         const pagina = {
+            Titulo_libro: titulo_libro,
             Index_pag: index_pag,
             Texto: texto,
             Color_texto: color_texto,
             Color_fondo: color_fondo,
+            imagen: imagen,
             Formato: formato,
             Audio: audio,
             Voz: voz,
@@ -30,9 +31,9 @@ class Libro {
     }
 }
 
-/*function obtenerLibro() {
+function obtenerLibro() {
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', '../views/mostrar_libro.php', false);
+    xhr.open('POST', '../js/libro.json', false);
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState == 4 && xhr.status == 200) {
@@ -43,17 +44,27 @@ class Libro {
         }
     };
     xhr.send();
-}*/
+}
 
 function crearLibro(datos_libro) {
-    miLibro = new Libro(datos_libro.Libro.Titulo, datos_libro.Libro.Enfoque, datos_libro.Libro.Direc_img, datos_libro.Libro.Color_titulo, datos_libro.Libro.Color_fondo, datos_libro.Libro.Usuario_id, datos_libro.Libro.ultima_modificacion);
+    miLibro = new Libro(
+        datos_libro.Libro.Titulo,
+        datos_libro.Libro.Enfoque,
+        datos_libro.Libro.Direc_img,
+        datos_libro.Libro.Color_titulo,
+        datos_libro.Libro.Color_fondo,
+        datos_libro.Libro.Usuario_id,
+        datos_libro.Libro.ultima_modificacion
+    );
 
     datos_libro.Paginas.forEach(pagina => {
         miLibro.agregarPagina(
+            pagina.titulo_libro,
             pagina.Index_pag,
-            pagina.Texto,
+            pagina.Text,
             pagina.Color_texto,
             pagina.Color_fondo,
+            pagina.imagen,
             pagina.Formato,
             pagina.Audio,
             pagina.Voz,
@@ -64,25 +75,21 @@ function crearLibro(datos_libro) {
 
 
 let miLibro = new Libro();
-crearLibro();
+obtenerLibro();
+//crearLibro();
 console.log(miLibro.Paginas);
+
+document.getElementById('Titulo').innerHTML = miLibro.Titulo;
 
 // Generar de etiquetas para cada pagina del libro //
 
 function GenerarPaginas(paginas) {
     paginas.forEach(pagina => {
-        let pagina_html = '<p id="Texto" style="color=' + pagina.Color_texto + ', background-color=' + pagina.Color_fondo + '">' + pagina.Texto + '</p> <img id="Imagen" src="../Imgs/' + pagina.Direc_img + ' alt="Imagen de la pagina"">';
-
+        let pagina_html = '<p id="Texto" style="color=' + pagina.Color_texto + ', background-color=' + pagina.Color_fondo + '">' + pagina.Texto + '</p> <img id="Imagen" src="../img/' + pagina.imagen + '" alt="Imagen de la pagina"">';
+        console.log(pagina_html);
         MostrarPaginas.push(pagina_html);
 
     });
-
-    //let mensajeElemento = document.createElement('section');
-    //mensajeElemento.innerHTML = alerta;
-
-    //window.onload = function () {
-    //document.body.insertBefore(mensajeElemento, document.getElementById('Login'));
-    //}
 };
 
 let MostrarPaginas = [];
@@ -142,7 +149,33 @@ console.log(previews);
 
 const rightBtn = document.querySelector('#right-btn');
 const leftBtn = document.querySelector('#left-btn');
-const carrusel = document.querySelector('.carrusel');
+
+let paginaActual = 0;
+mostrarPagina();
+
+rightBtn.addEventListener('click', () => {
+    if (paginaActual < MostrarPaginas.length - 1) {
+        paginaActual++;
+        mostrarPagina();
+    }
+});
+
+leftBtn.addEventListener('click', () => {
+    if (paginaActual > 0) {
+        paginaActual--;
+        mostrarPagina();
+    }
+});
+
+function mostrarPagina() {
+    // Obtener el contenedor de la página actual en algún contenedor HTML
+    const contenedorPagina = document.getElementById('pagina');
+    contenedorPagina.innerHTML = MostrarPaginas[paginaActual];
+}
+
+
+
+/*const carrusel = document.querySelector('.carrusel');
 
 rightBtn.addEventListener('click', () => {
     carrusel.scrollLeft += 300;
@@ -157,3 +190,4 @@ leftBtn.addEventListener('click', () => {
 function nada() {
     alert("No hay nada");
 }
+*/

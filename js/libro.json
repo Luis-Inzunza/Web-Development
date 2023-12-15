@@ -10,20 +10,24 @@
     },
     "Paginas": [
         {
+            "titulo_libro": "Libro de María 1",
             "Index_pag": 1,
-            "Texto": "Texto página 1",
+            "Text": "Texto página 1",
             "Color_texto": "#FF0000",
             "Color_fondo": "#00FF00",
+            "imagen": "pirata.jpg",
             "Formato": 3,
             "Audio": true,
             "Voz": 0,
             "Subrayado": false
         },
         {
+            "titulo_libro": "Libro de María 1",
             "Index_pag": 2,
-            "Texto": "Texto página 2",
+            "Text": "Texto página 2",
             "Color_texto": "#00FF00",
             "Color_fondo": "#FF0000",
+            "imagen": "arbol.jpg",
             "Formato": 1,
             "Audio": false,
             "Voz": 1,
