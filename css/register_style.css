@@ -142,3 +142,62 @@ h4 {
         width: 40%;
     }
 }
+@media print {
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    body {
+        background-image: none; 
+        background-color: white; 
+        display: block; 
+        margin-top: 0; 
+    }
+
+    #form-register {
+        width: 100%; 
+        background: white; 
+        padding: 2% 5%; 
+        display: block; 
+        border-radius: 0; 
+        box-shadow: none; 
+    }
+
+    h1, h4 {
+        font-size: 100%; 
+        margin-bottom: 2%; 
+        color: black; 
+        text-align: left; 
+    }
+
+    .controls {
+        background: white;
+        padding: 2%;
+        border-radius: 0;
+        margin-bottom: 4%; 
+        border: 1px solid black; 
+    }
+
+    #Terminos, #panel, #form-register p, #Terminos p, #form-register a, #form-register a p, #form-register a:hover, #subir, #form-register .botons:hover {
+        display: none;
+    }
+
+
+        body::after {
+            content: "Impresion no Oficial"; 
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 5em;
+            color: rgba(0, 0, 0, 0.1); 
+            z-index: 9999;
+            width: 100%;
+            text-align: center;
+            white-space: nowrap;
+        }
+}

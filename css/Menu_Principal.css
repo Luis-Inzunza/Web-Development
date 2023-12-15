@@ -66,3 +66,89 @@ body {
     width: 30%;
     max-width: 300px;
 }
+
+@media print {
+
+    #usuario{
+        text-align: center;
+    }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+ 
+    p {
+        font-size: 1em;
+        color: black;
+    }
+
+    a {
+        text-decoration: none;
+        color: black; 
+    }
+
+    body {
+        width: 100%;
+        height: auto; 
+        margin: 0;
+        background-color: white; 
+    }
+
+
+    .modales {
+        background-color: white;
+    }
+
+    #cerrar{
+        color: rgba(215, 20, 20, 0); 
+    }
+
+    #Libreria {
+        padding-top: 5%;
+        display: block; 
+    }
+
+    .Libro img {
+        padding-top: 5%;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .crear {
+        color: rgba(215, 20, 20, 0);
+        border-style: solid; 
+        display: block;
+    }
+
+    #nuevo-libro {
+        display: none; 
+    }
+
+
+    .w3-container {
+        display: block;
+    }
+
+    .w3-card {
+        width: 100%;
+        max-width: none;
+    }
+
+
+    body::after {
+        content: "Impresion no Oficial"; 
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        font-size: 5em;
+        color: rgba(0, 0, 0, 0.1); 
+        z-index: 9999;
+        width: 100%;
+        text-align: center;
+        white-space: nowrap;
+    }
+}
+

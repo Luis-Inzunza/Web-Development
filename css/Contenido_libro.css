@@ -2,146 +2,229 @@
 
 
 body {
-  font-family: 'Oswald', sans-serif;
-  font-size: 35px;
-  color: #032E33;
+    font-family: 'Oswald', sans-serif;
+    font-size: 35px;
+    color: #032E33;
 
-  background-color: #E4F1F2;
-}
+    background-color: #E4F1F2;
+  }
+  
+  html, body {
+    height: 97%;
+  }
+  
+  .container {
+    display: flex;
+    height: 100%;
 
-html,
-body {
-  height: 97%;
-}
+  }
+  
+  .formulario {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .formulario label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .formulario input,
+  .formulario select,
+  .formulario button {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .formulario button {
+    background-color: #175359;
+    color: white;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  .formulario button:hover {
+    background-color: #0d2e31;
+  }
+  
+  .divDerecha {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    height: 100%;
+  }
+  
+  .checkbox-label {
+    display: block;
+    position: relative;
+    padding: 10px 0 30px 0;
+    height: 25px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    user-select: none; 
+  }
+  
 
-.container {
-  display: flex;
-  height: 100%;
+  .checkbox-input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
 
-}
+  .checkbox-custom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    margin-top: 28px;
+    margin-left: 360px; 
+    width: 25px;
+    background-color: #7EB9BF;
+    border-radius: 4px; 
+    transition: all 0.3s; 
+  }
+  
 
-.formulario {
-  flex: 1;
-  padding: 20px;
-}
+  .checkbox-label:hover input ~ .checkbox-custom {
+    background-color: #70a4aa;
+  }
+  
 
-.formulario label {
-  display: block;
-  margin-top: 10px;
-}
+  .checkbox-input:checked ~ .checkbox-custom {
+    background-color: #175359;
+  }
+  
 
-.formulario input,
-.formulario select,
-.formulario button {
-  width: 100%;
-  padding: 8px;
-  border: none;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
+  .checkbox-input:checked ~ .checkbox-custom:after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 9px;
+    top: 5px;
+    width: 8px;
+    height: 14px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+  
 
-.formulario button {
-  background-color: #175359;
-  color: white;
-  border: none;
-  margin-top: 10px;
-  cursor: pointer;
-}
+  .checkbox-input:focus ~ .checkbox-custom {
+    box-shadow: 0 0 0 3px rgba(21, 156, 228, 0.4);
+  }
+  
+  input[type="color"] {
+    height: 40px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;
+    background-color: transparent; 
+    margin-top: 5px; 
+    margin-bottom: 5px; 
+  }
+  
 
-.formulario button:hover {
-  background-color: #0d2e31;
-}
+  input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+  }
+  input[type="color"]::-webkit-color-swatch {
+    border: none;
+  }
+  
 
-.divDerecha {
-  flex: 1;
-  padding: 20px;
-  background-color: #ffffff;
-  height: 100%;
-}
+  input[type="color"]::-moz-color-swatch {
+    border: none;
+    border-radius: 5px;
+  }
+  
+  @media print {
 
-.checkbox-label {
-  display: block;
-  position: relative;
-  padding: 10px 0 30px 0;
-  height: 25px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  user-select: none;
-}
-
-
-.checkbox-input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-
-.checkbox-custom {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  margin-top: 28px;
-  margin-left: 360px;
-  width: 25px;
-  background-color: #7EB9BF;
-  border-radius: 4px;
-  transition: all 0.3s;
-}
-
-
-.checkbox-label:hover input~.checkbox-custom {
-  background-color: #70a4aa;
-}
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
 
 
-.checkbox-input:checked~.checkbox-custom {
-  background-color: #175359;
-}
+    body {
+        font-family: 'Oswald', sans-serif;
+        font-size: 16px; 
+        color: black; 
+        background-color: white; 
+    }
+
+    html, body {
+        height: auto; 
+    }
 
 
-.checkbox-input:checked~.checkbox-custom:after {
-  content: "";
-  position: absolute;
-  display: block;
-  left: 9px;
-  top: 5px;
-  width: 8px;
-  height: 14px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  transform: rotate(45deg);
-}
+    .container {
+        display: block; 
+        height: auto;
+    }
 
 
-.checkbox-input:focus~.checkbox-custom {
-  box-shadow: 0 0 0 3px rgba(21, 156, 228, 0.4);
-}
+    .formulario {
+        padding: 20px;
+    }
 
-input[type="color"] {
-  height: 40px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: transparent;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
+    .formulario label {
+        display: block;
+        margin-top: 10px;
+    }
+
+    .formulario input,
+    .formulario select,
+    .formulario button {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid black; 
+        border-radius: 0; 
+    }
+
+    .formulario button {
+        background-color: #175359;
+        color: white;
+        border: none;
+        margin-top: 10px;
+        cursor: default; 
+    }
+
+    .formulario button:hover {
+        background-color: #0d2e31;
+    }
 
 
-input[type="color"]::-webkit-color-swatch-wrapper {
-  padding: 0;
-}
-
-input[type="color"]::-webkit-color-swatch {
-  border: none;
-}
+    .divDerecha {
+        padding: 20px;
+        background-color: white;
+        height: auto;
+    }
 
 
-input[type="color"]::-moz-color-swatch {
-  border: none;
-  border-radius: 5px;
+    .checkbox-label, .checkbox-input, .checkbox-custom {
+        display: none; /* Los checkboxes no son necesarios en impresión */
+    }
+
+    input[type="color"] {
+        display: none; 
+    }
+
+
+        body::after {
+          content: "Impresion no Oficial"; 
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(-45deg);
+          font-size: 5em;
+          color: rgba(0, 0, 0, 0.1); 
+          z-index: 9999;
+          width: 100%;
+          text-align: center;
+          white-space: nowrap;
+      }
 }
