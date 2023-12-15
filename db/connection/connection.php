@@ -7,12 +7,12 @@ class QueryManager {
     private const USER = "sube_baja";
 
     private const PASSWORD = "";
-    
-    private const SCHEMA = "sistema_de_libros";
+
+    private const SCHEMA = "amigables";
 
     public function __construct()
     {
-        
+
     }
 
     private function connect() {
@@ -29,8 +29,9 @@ class QueryManager {
     public function execute_query($query) {
         $this->connect();
         $result_query = mysqli_query(self::$connection, $query);
+        echo $result_query;
         $this->close_connection();
-        if($result_query === false){
+        if($result_query == false){
             throw new Exception("query_exception");
         }else {
             return $result_query;

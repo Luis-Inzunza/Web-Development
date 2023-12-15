@@ -1,4 +1,4 @@
-<?php 
+<?php
 include __DIR__ . '/../connection/connection.php';
 include __DIR__ . '/../models/Book.php';
 session_start();
@@ -23,7 +23,7 @@ function add_book (Book $book)
 {
     $id_user = $_SESSION['id'];
     $query = $sql = "INSERT libros (Usuario_id, Titulo, Color_titulo, Color_fondo, Enfoque, Direc_img)".
-    " VALUES ('$id_user', '$book->titulo' , '$book->color_titulo', '$book->color_fondo', '$book->enfoque', '$book->direc_img')";    
+    " VALUES ('$id_user', '$book->titulo' , '$book->color_titulo', '$book->color_fondo', '$book->enfoque', '$book->direc_img')";
     $query_manager = new QueryManager;
     try {
         $result_query = $query_manager->execute_query($query);
@@ -33,7 +33,7 @@ function add_book (Book $book)
             echo '<div class="error">Base de datos no disponible</div>';
         }
     }
-} 
+}
 
 
 ?>
