@@ -1,4 +1,4 @@
-const API_KEY = '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'
+const API_KEY = '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'
 const UTILIDAD_AI = 'Eres un chatbot asistente en una app de escritura.'
 
 

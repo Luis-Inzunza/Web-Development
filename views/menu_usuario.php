@@ -54,10 +54,6 @@ $length = count($books);
             echo '<button class="w3-bar-item w3-button w3-hover-aqua w3-green w3-center" onclick="mostrar_libro('. $index_book .')">Mostrar</button>';
             echo '</form>';
 
-            echo '<form method="POST" action="crear_pagina.php" id="borrar_form' . $index_book . '" class="w3-bar-item w3-button w3-hover-red w3-green w3-center">';
-            echo '<button class="w3-bar-item w3-button w3-hover-red w3-green w3-center" onclick="nueva_pagina(' . $index_book . ',' . $book->titulo . ')">Borrar</button>';
-            echo '</form>'; //Fixear
-
             echo '<form method="POST" id="nueva_pagina_form_"'. $index_book . ' action="crear_pagina.php" class="w3-bar-item w3-button w3-hover-red w3-green w3-center">';
             echo '<input type="hidden" name="titulo_libro" value="' . $book->titulo . '">';
             echo '<button class="w3-bar-item w3-button w3-hover-red w3-green w3-center" onclick="nueva_pagina(' . $index_book . ')">Nueva Página</button>';

@@ -1,5 +1,5 @@
 console.log("Libro_completo.js");
-
+console.log(datosLibro);
 // Creacion  y obtencion de datos del objeto libro //
 
 class Libro {
@@ -31,7 +31,7 @@ class Libro {
     }
 }
 
-function obtenerLibro() {
+/*function obtenerLibro() {
     let xhr = new XMLHttpRequest();
     xhr.open('POST', '../js/libro.json', false);
 
@@ -44,39 +44,39 @@ function obtenerLibro() {
         }
     };
     xhr.send();
-}
+}*/
 
 function crearLibro(datos_libro) {
     miLibro = new Libro(
-        datos_libro.Libro.Titulo,
-        datos_libro.Libro.Enfoque,
-        datos_libro.Libro.Direc_img,
-        datos_libro.Libro.Color_titulo,
-        datos_libro.Libro.Color_fondo,
-        datos_libro.Libro.Usuario_id,
-        datos_libro.Libro.ultima_modificacion
+        datos_libro.Titulo,
+        datos_libro.Enfoque,
+        datos_libro.Direc_img,
+        datos_libro.Color_titulo,
+        datos_libro.Color_fondo,
+        datos_libro.Usuario_id,
+        datos_libro.ultima_modificacion
     );
 
-    datos_libro.Paginas.forEach(pagina => {
+    datos_libro.paginas.forEach(pagina => {
         miLibro.agregarPagina(
             pagina.titulo_libro,
-            pagina.Index_pag,
-            pagina.Text,
-            pagina.Color_texto,
-            pagina.Color_fondo,
+            pagina.index_pag,
+            pagina.text,
+            pagina.color_texto,
+            pagina.color_fondo,
             pagina.imagen,
-            pagina.Formato,
-            pagina.Audio,
-            pagina.Voz,
-            pagina.Subrayado
+            pagina.formato,
+            pagina.audio,
+            pagina.voz,
+            pagina.subrayado
         );
     });
 }
 
 
-let miLibro = new Libro();
-obtenerLibro();
-//crearLibro();
+var miLibro;
+//obtenerLibro();
+crearLibro(datosLibro);
 console.log(miLibro.Paginas);
 
 document.getElementById('Titulo').innerHTML = miLibro.Titulo;
