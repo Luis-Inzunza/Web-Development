@@ -33,13 +33,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-
     <header>
-        <h2 id="Titulo">Hola libro</h2>
+        <h2>Hola libro</h2>
     </header>
     <section id="section-lectura">
         <button class="scroll-button" id="left-btn">←</button>
         <section id="pagina">
+            <p id="Texto">Este es el texto de la lectura Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Dolore
+                voluptates et iure dolor, eum, soluta possimus deserunt
+            </p>
+            <img id="Imagen" src="../views/pexels-pixabay-45170.jpg" alt="Imagen de la pagina">
         </section>
         <button class="scroll-button" id="right-btn">→</button>
 
@@ -50,13 +54,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="carrusel" id="carrusel">
         </div>
     </section>
-
-    <script>
-    const datosLibro = <?php echo $_SESSION['json'] ?>;
-    console.log(datosLibro);
-    </script>
     <script src="../js/html2canvas.min.js"></script>
     <script src="../js/Libro_completo.js"></script>
-</body>
+
+    <script>
+      let datosLibro = <?php echo $_SESSION['json'] ?>;
+      console.log(datosLibro);
+    </script>
+  </body>
+
+
 
 </html>

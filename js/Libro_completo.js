@@ -48,13 +48,13 @@ function obtenerLibro() {
 
 function crearLibro(datos_libro) {
     miLibro = new Libro(
-        datos_libro.Libro.Titulo,
-        datos_libro.Libro.Enfoque,
-        datos_libro.Libro.Direc_img,
-        datos_libro.Libro.Color_titulo,
-        datos_libro.Libro.Color_fondo,
-        datos_libro.Libro.Usuario_id,
-        datos_libro.Libro.ultima_modificacion
+        datos_libro.Titulo,
+        datos_libro.Enfoque,
+        datos_libro.Direc_img,
+        datos_libro.Color_titulo,
+        datos_libro.Color_fondo,
+        datos_libro.Usuario_id,
+        datos_libro.ultima_modificacion
     );
 
     datos_libro.Paginas.forEach(pagina => {
@@ -88,7 +88,6 @@ function GenerarPaginas(paginas) {
         let pagina_html = '<p id="Texto" style="color=' + pagina.Color_texto + ', background-color=' + pagina.Color_fondo + '">' + pagina.Texto + '</p> <img id="Imagen" src="../img/' + pagina.imagen + '" alt="Imagen de la pagina"">';
         console.log(pagina_html);
         MostrarPaginas.push(pagina_html);
-
     });
 };
 
@@ -97,6 +96,74 @@ GenerarPaginas(miLibro.Paginas);
 console.log(MostrarPaginas);
 
 /////////////////////////////////////
+
+
+// Desplazamiento del Libro //
+const rightBtn = document.querySelector('#right-btn');
+const leftBtn = document.querySelector('#left-btn');
+
+let paginaActual = 0;
+mostrarPagina();
+
+rightBtn.addEventListener('click', () => {
+    if (paginaActual < MostrarPaginas.length - 1) {
+        paginaActual++;
+        mostrarPagina();
+    }
+});
+
+leftBtn.addEventListener('click', () => {
+    if (paginaActual > 0) {
+        paginaActual--;
+        mostrarPagina();
+    }
+});
+
+function mostrarPagina() {
+    // Obtener el contenedor de la página actual en algún contenedor HTML
+    const contenedorPagina = document.getElementById('pagina');
+    contenedorPagina.innerHTML = MostrarPaginas[paginaActual];
+}
+
+///////////////////////////////////////
+
+
+// Reproduccion de audio //
+const reproducirBtn = document.getElementById('reproducir');
+const pausarBtn = document.getElementById('pausar');
+
+window.speechSynthesis.onvoiceschanged = function () {
+    reproducirBtn.addEventListener('click', function () {
+        const textoElemento = document.getElementById('Texto');
+        const texto = textoElemento.textContent || textoElemento.innerText;
+        console.log(texto);
+
+        let utterance = new SpeechSynthesisUtterance(texto);
+
+        let voices = window.speechSynthesis.getVoices();
+
+        let voicesInSpanish = voices.filter(function (voice) {
+            console.log(voice.lang.startsWith('es'));
+            return voice.lang.startsWith('es');
+        });
+
+        // Si hay voces en español disponibles, usa la primera
+        if (voicesInSpanish.length > 0) {
+            utterance.voice = voicesInSpanish[0];
+        }
+
+        // Lee el texto
+        speechSynthesis.speak(utterance);
+    });
+
+    pausarBtn.addEventListener('click', function () {
+        if (speechSynthesis.speaking) {
+            speechSynthesis.pause();
+        } else {
+            console.log('No hay ninguna reproducción en curso.');
+        }
+    });
+};
 
 // Generar previews para cada pagina //
 /*
@@ -146,34 +213,6 @@ console.log(previews);
 
 
 // Moviemiento de carrulsel //
-
-const rightBtn = document.querySelector('#right-btn');
-const leftBtn = document.querySelector('#left-btn');
-
-let paginaActual = 0;
-mostrarPagina();
-
-rightBtn.addEventListener('click', () => {
-    if (paginaActual < MostrarPaginas.length - 1) {
-        paginaActual++;
-        mostrarPagina();
-    }
-});
-
-leftBtn.addEventListener('click', () => {
-    if (paginaActual > 0) {
-        paginaActual--;
-        mostrarPagina();
-    }
-});
-
-function mostrarPagina() {
-    // Obtener el contenedor de la página actual en algún contenedor HTML
-    const contenedorPagina = document.getElementById('pagina');
-    contenedorPagina.innerHTML = MostrarPaginas[paginaActual];
-}
-
-
 
 /*const carrusel = document.querySelector('.carrusel');
 

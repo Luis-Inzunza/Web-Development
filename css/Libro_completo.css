@@ -55,6 +55,12 @@ header {
     max-height: 90vh;
 }
 
+#reproductor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
 /* Carrusel de elementos */
 .carrusel {

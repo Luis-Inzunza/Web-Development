@@ -8,7 +8,7 @@ class QueryManager {
 
     private const PASSWORD = "";
 
-    private const SCHEMA = "sistema_de_libros";
+    private const SCHEMA = "amigables";
 
     public function __construct()
     {
